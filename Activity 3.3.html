@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Type Checker</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f7ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 450px;
+            width: 100%;
+            animation: fadeIn 0.8s ease;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #005f73;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 14px 30px;
+            font-size: 1.2rem;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #004d40;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .result {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .triangle-image {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Triangle Type Checker</h1>
+        <p>Click the button below to check the triangle type.</p>
+        <button onclick="getUserInput()">Check Triangle</button>
+    </div>
+
+    <script>
+        function getUserInput() {
+            var a = parseFloat(prompt("Enter the first side of the triangle:"));
+            var b = parseFloat(prompt("Enter the second side of the triangle:"));
+            var c = parseFloat(prompt("Enter the third side of the triangle:"));
+
+            if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) {
+                alert("Please enter valid positive numbers for all sides!");
+                return;
+            }
+
+            determineTriangle(a, b, c);
+        }
+
+        function determineTriangle(a, b, c) {
+            let triangleType = "";
+            let imageUrl = "";
+
+            if (a === b && b === c) {
+                triangleType = "EQUILATERAL";
+                imageUrl = "https://cdn1.byjus.com/wp-content/uploads/2020/02/equilateral-triangle.png";
+            } else if (a === b || b === c || a === c) {
+                triangleType = "ISOSCELES";
+                imageUrl = "https://upload.wikimedia.org/wikipedia/commons/1/14/Triangle.Isosceles.svg";
+            } else {
+                triangleType = "SCALENE";
+                imageUrl = "https://cdn1.byjus.com/wp-content/uploads/2020/03/Scalene-Triangle-2.png";
+            }
+
+            alert("The triangle is " + triangleType + "!");
+
+            let imageElement = new Image();
+            imageElement.src = imageUrl;
+            imageElement.alt = triangleType;
+            imageElement.className = 'triangle-image';
+
+            document.body.appendChild(imageElement);
+        }
+    </script>
+
+</body>
+</html>
