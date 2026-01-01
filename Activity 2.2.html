@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Cable TV Schedule</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        th {
+            background: #34495e;
+            color: white;
+            font-size: 16px;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        tr:hover {
+            background: #f1f1f1;
+            transition: 0.3s;
+        }
+        td {
+            font-size: 14px;
+        }
+        /* Nested table styling */
+        .nested-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+        .nested-table td {
+            border: 1px solid #bbb;
+            padding: 4px;
+            font-size: 12px;
+            background: #fefefe;
+        }
+        .nested-table th {
+            background: #2c3e50;
+            color: white;
+            font-size: 12px;
+            padding: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weekly Prime-Time TV Schedule</h1>
+
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+        </tr>
+        <tr>
+            <td>7:00 - 7:30</td>
+            <td rowspan="2">🎬 Movie Night</td>
+            <td>📰 News Update</td>
+            <td rowspan="3">📺 Drama Special</td>
+            <td>🎨 Cartoons</td>
+            <td rowspan="2">⚽ Sports Live</td>
+        </tr>
+        <tr>
+            <td>7:30 - 8:00</td>
+            <td>😂 Comedy Hour</td>
+            <td rowspan="2">👨‍👩‍👧 Family Show</td>
+        </tr>
+        <tr>
+            <td>8:00 - 8:30</td>
+            <td>🍳 Cooking Show</td>
+            <td>🎮 Game Show</td>
+            <td>🎵 Music Hits</td>
+        </tr>
+        <tr>
+            <td>8:30 - 9:00</td>
+            <td rowspan="3">📖 Teleserye</td>
+            <td>🎥 Documentary</td>
+            <td>❓ Quiz Bee</td>
+            <td rowspan="2">🌍 Reality TV</td>
+            <td>📰 Late News</td>
+        </tr>
+        <tr>
+            <td>9:00 - 9:30</td>
+            <td rowspan="2">
+                🏀 Sports Replay
+                <!-- Nested table starts here -->
+                <table class="nested-table">
+                    <tr>
+                        <th>Sport</th>
+                        <th>Channel</th>
+                    </tr>
+                    <tr>
+                        <td>Basketball</td>
+                        <td>ESPN</td>
+                    </tr>
+                    <tr>
+                        <td>Football</td>
+                        <td>Fox Sports</td>
+                    </tr>
+                </table>
+                <!-- Nested table ends here -->
+            </td>
+            <td>🎤 Talk Show</td>
+            <td>🎬 Movie Feature</td>
+        </tr>
+        <tr>
+            <td>9:30 - 10:00</td>
+            <td>🎶 Music Lounge</td>
+            <td>😂 Stand-up Comedy</td>
+            <td>🍴 Cooking Contest</td>
+        </tr>
+    </table>
+</body>
+</html>
