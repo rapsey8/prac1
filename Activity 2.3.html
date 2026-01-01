@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activity 2.3 - Combined</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+        }
+        #banner {
+            background: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        #container {
+            display: flex;
+            height: calc(100vh - 80px);
+        }
+        #menu {
+            width: 220px;
+            background: #ecf0f1;
+            padding: 15px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        #menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        #menu li {
+            margin: 10px 0;
+        }
+        #menu a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        #menu a:hover {
+            color: #2980b9;
+        }
+        #content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #fff;
+        }
+
+        /* Resume styling */
+        .resume-container {
+            width: 700px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 20px;
+            border: 1px solid #000;
+            background: #fff;
+        }
+        .resume-container h1 {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .resume-container h2 {
+            font-size: 26px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .resume-container h3 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .resume-container p, .resume-container li {
+            font-size: 16px;
+        }
+        .resume-container img {
+            display: block;
+            margin: 10px auto;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #000;
+        }
+        .resume-container hr {
+            border: 1px solid black;
+        }
+
+        /* Schedule styling */
+        .schedule-table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .schedule-table th {
+            background: #34495e;
+            color: white;
+            font-size: 16px;
+        }
+        .schedule-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        .schedule-table tr:hover {
+            background: #f1f1f1;
+            transition: 0.3s;
+        }
+        .schedule-table td {
+            font-size: 14px;
+        }
+        .nested-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+        .nested-table td, .nested-table th {
+            border: 1px solid #bbb;
+            padding: 4px;
+            font-size: 12px;
+        }
+        .nested-table th {
+            background: #2c3e50;
+            color: white;
+        }
+    </style>
+    <script>
+        function loadContent(page) {
+            document.getElementById("content").innerHTML = document.getElementById(page).innerHTML;
+        }
+        window.onload = function() {
+            loadContent('home'); // Default page
+        }
+    </script>
+</head>
+<body>
+    <!-- Banner -->
+    <div id="banner">
+        <h1>📺 Home Cable – Prime Time Portal</h1>
+    </div>
+
+    <!-- Main Layout -->
+    <div id="container">
+        <!-- Menu -->
+        <div id="menu">
+            <h3>📂 Menu</h3>
+            <ul>
+                <li><a href="#" onclick="loadContent('home')">Home</a></li>
+                <li><a href="#" onclick="loadContent('resume')">Resume</a></li>
+                <li><a href="#" onclick="loadContent('schedule')">Schedule</a></li>
+            </ul>
+        </div>
+
+        <!-- Content -->
+        <div id="content"></div>
+    </div>
+
+    <!-- Hidden Pages -->
+    <div style="display:none;">
+
+        <!-- Home Page -->
+        <div id="home">
+            <h2>Welcome to Home Cable</h2>
+            <p>This portal contains:</p>
+            <ul>
+                <li>Pedro’s Resume</li>
+                <li>Weekly Prime-Time TV Schedule</li>
+                <li>More exciting features coming soon!</li>
+            </ul>
+
+            <h3>🌐 Quick Links</h3>
+            <p>Check out more about us:</p>
+            <ul>
+                <li><a href="https://www.facebook.com/sscrdecaviteofficial" target="_blank">📘 Official Facebook Page</a></li>
+                <li><a href="mailto:pedro.delacruz@email.com">✉️ Contact Pedro via Email</a></li>
+                <li><a href="https://www.homecable.com" target="_blank">🔗 Home Cable Official Website</a></li>
+            </ul>
+        </div>
+
+        <!-- Resume Page -->
+        <div id="resume">
+            <div class="resume-container">
+                <h1>Pedro Dela Cruz</h1>
+                <p style="text-align:center;">11 Bayani Ave., Manila, (632) 111-1111</p>
+
+                <img src="https://static.vecteezy.com/system/resources/previews/034/585/785/non_2x/ai-generative-confident-young-businessman-in-suit-standing-with-arms-folded-free-photo.jpg" alt="Pedro's Picture">
+
+                <h2>Objectives</h2>
+                <hr>
+                <p>
+                    Masters degree graduate, interested in a telecommunications position. 
+                    Highly skilled in the use of computers, audio/video, and the uplink/downlink aspects of satellite communications. 
+                    Interested in positions with a strong international component. Willing to travel.
+                </p>
+
+                <h2>Education</h2>
+                <h3>Ateneo De Manila (1994-1996)</h3>
+                <ul>
+                    <li>Graduated May, 1996. M.A. International Telecommunications</li>
+                    <li>Grade Point Average: 3.5 overall, 3.9 in major</li>
+                    <li>Dean’s List: September 1994-1996</li>
+                    <li>Member, Phi Alpha Omega Honor Society</li>
+                </ul>
+
+                <h3>University of the Philippines (1991-1994)</h3>
+                <ul>
+                    <li>Graduated May, 1994. B.A. International Studies</li>
+                    <li>Grade Point Average: 4.0 overall, 4.0 in major</li>
+                    <li>Dean’s List: September 1991-May 1994</li>
+                    <li>President, Honor Key Society</li>
+                </ul>
+
+                <h2>Employment</h2>
+                <p>
+                    <b><i>Satellite Technician</i></b> (Front Range Media Inc. 1993-1994):  
+                    Monitored satellite uplink/downlink procedures to assure quality video transmissions.  
+                    Aided technicians with transmission problems. Assisted in the assembly and maintenance of uplink facility.
+                </p>
+
+                <p>
+                    <b><i>Technical Assistant</i></b> (Mountain View Bank 1992-1993):  
+                    Managed data processing system. Handled user requests and discussed programming options.  
+                    Managed delivery service.
+                </p>
+            </div>
+        </div>
+
+        <!-- Schedule Page -->
+        <div id="schedule">
+            <h1>Weekly Prime-Time TV Schedule</h1>
+            <table class="schedule-table">
+                <tr>
+                    <th>Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                </tr>
+                <tr>
+                    <td>7:00 - 7:30</td>
+                    <td rowspan="2">🎬 Movie Night</td>
+                    <td>📰 News Update</td>
+                    <td rowspan="3">📺 Drama Special</td>
+                    <td>🎨 Cartoons</td>
+                    <td rowspan="2">⚽ Sports Live</td>
+                </tr>
+                <tr>
+                    <td>7:30 - 8:00</td>
+                    <td>😂 Comedy Hour</td>
+                    <td rowspan="2">👨‍👩‍👧 Family Show</td>
+                </tr>
+                <tr>
+                    <td>8:00 - 8:30</td>
+                    <td>🍳 Cooking Show</td>
+                    <td>🎮 Game Show</td>
+                    <td>🎵 Music Hits</td>
+                </tr>
+                <tr>
+                    <td>8:30 - 9:00</td>
+                    <td rowspan="3">📖 Teleserye</td>
+                    <td>🎥 Documentary</td>
+                    <td>❓ Quiz Bee</td>
+                    <td rowspan="2">🌍 Reality TV</td>
+                    <td>📰 Late News</td>
+                </tr>
+                <tr>
+                    <td>9:00 - 9:30</td>
+                    <td rowspan="2">
+                        🏀 Sports Replay
+                        <table class="nested-table">
+                            <tr>
+                                <th>Sport</th>
+                                <th>Channel</th>
+                            </tr>
+                            <tr>
+                                <td>Basketball</td>
+                                <td>ESPN</td>
+                            </tr>
+                            <tr>
+                                <td>Football</td>
+                                <td>Fox Sports</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>🎤 Talk Show</td>
+                    <td>🎬 Movie Feature</td>
+                </tr>
+                <tr>
+                    <td>9:30 - 10:00</td>
+                    <td>🎶 Music Lounge</td>
+                    <td>😂 Stand-up Comedy</td>
+                    <td>🍴 Cooking Contest</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
